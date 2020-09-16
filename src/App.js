@@ -4,9 +4,15 @@ import './App.css';
 
 import Menu from './components/MenuComponent';
 
+import { DISHES } from './shared/dishes'
+
 class App extends Component {
-  constructor(prps){
-    super()
+  constructor(props){
+    super(props);
+
+    this.state = {
+      dishes: DISHES
+    };
   }
   render(){
     return (
@@ -16,7 +22,7 @@ class App extends Component {
             <NavbarBrand href="/" >Ristorante Confusion</NavbarBrand>
           </div>
         </Navbar>
-        <Menu />
+        <Menu dishes={this.state.dishes}/>
       </div>
     );
   }
