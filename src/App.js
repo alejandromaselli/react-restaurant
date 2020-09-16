@@ -1,17 +1,25 @@
-import React from 'react';
-import './App.css';
+import React, { Component } from 'react';
 import { Navbar, NavbarBrand } from 'reactstrap';
+import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <Navbar dark color="primary">
-        <div className="container">
-          <NavbarBrand href="/" >Ristorante Confusion</NavbarBrand>
-        </div>
-      </Navbar>
-    </div>
-  );
+import Menu from './components/MenuComponent';
+
+class App extends Component {
+  constructor(prps){
+    super()
+  }
+  render(){
+    return (
+      <div>
+        <Navbar dark color="primary">
+          <div className="container">
+            <NavbarBrand href="/" >Ristorante Confusion</NavbarBrand>
+          </div>
+        </Navbar>
+        <Menu />
+      </div>
+    );
+  }
 }
 
 export default App;
